@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Lato-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Story.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+lifetime_randomness = 0.2
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 321.78
+initial_velocity_random = 0.33
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle_random = 1.0
+scale = 3.0
+
+[node name="Story" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 554.0
+margin_top = 30.0
+margin_right = 872.0
+margin_bottom = 108.0
+custom_fonts/font = SubResource( 1 )
+text = "Pick A Path"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 643.0
+margin_top = 231.0
+margin_right = 728.0
+margin_bottom = 301.0
+custom_fonts/font = SubResource( 2 )
+text = "Now"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 562.0
+margin_top = 402.0
+margin_right = 807.0
+margin_bottom = 472.0
+custom_fonts/font = SubResource( 3 )
+text = "The Future"
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 679, 455 )
+z_index = -1
+amount = 100
+lifetime = 5.0
+process_material = SubResource( 4 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

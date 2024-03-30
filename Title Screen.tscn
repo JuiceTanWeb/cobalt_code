@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Lato-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Title Screen.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+lifetime_randomness = 0.2
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 321.78
+initial_velocity_random = 0.33
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle_random = 1.0
+scale = 3.0
+
+[node name="Title Screen" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 501.0
+margin_top = 63.0
+margin_right = 945.0
+margin_bottom = 141.0
+custom_fonts/font = ExtResource( 2 )
+text = "Space Materials"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 677.0
+margin_top = 735.0
+margin_right = 809.0
+margin_bottom = 819.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 2 )
+text = "Play"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 549.0
+margin_top = 202.0
+margin_right = 865.0
+margin_bottom = 241.0
+custom_fonts/font = SubResource( 1 )
+text = "The Issues with Cobalt"
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 679, 455 )
+z_index = -1
+amount = 100
+lifetime = 7.0
+process_material = SubResource( 2 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

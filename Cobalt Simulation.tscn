@@ -1,0 +1,237 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Drawing-81.sketchpad.png" type="Texture" id=2]
+[ext_resource path="res://flashlight.gd" type="Script" id=3]
+[ext_resource path="res://cobalt.png" type="Texture" id=4]
+[ext_resource path="res://Cobalt Simulation.gd" type="Script" id=5]
+[ext_resource path="res://Area2D.gd" type="Script" id=6]
+[ext_resource path="res://Drawing-80.sketchpad(2).png" type="Texture" id=7]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+cull_mode = 1
+polygon = PoolVector2Array( -48, -16, 54, -52, 92, -46, 72, -4, -36, 50, -80, 52, -88, 16 )
+
+[node name="Cobalt Simulation" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Time" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "Time Left: 15"
+
+[node name="Timer" type="Timer" parent="Time"]
+autostart = true
+
+[node name="flashlight" type="Light2D" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+energy = 3.97
+range_height = 281.8
+shadow_enabled = true
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 829, 273 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D/Sprite"]
+position = Vector2( 0, 2 )
+occluder = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 788, 280, 801, 266, 827, 246, 865, 242, 877, 254, 868, 263, 851, 284, 815, 300, 788, 304 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 285, 331 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D2"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 829, 273 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D2/Sprite"]
+position = Vector2( 0, 2 )
+occluder = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+polygon = PoolVector2Array( 788, 280, 801, 266, 827, 246, 865, 242, 877, 254, 868, 263, 851, 284, 815, 300, 788, 304 )
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2( -591, 78 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D3"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 829, 273 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D3/Sprite"]
+position = Vector2( 0, 2 )
+occluder = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
+polygon = PoolVector2Array( 788, 280, 801, 266, 827, 246, 865, 242, 877, 254, 868, 263, 851, 284, 815, 300, 788, 304 )
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2( 374, 56 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D4"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 829, 273 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D4/Sprite"]
+position = Vector2( 0, 2 )
+occluder = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D4"]
+polygon = PoolVector2Array( 788, 280, 801, 266, 827, 246, 865, 242, 877, 254, 868, 263, 851, 284, 815, 300, 788, 304 )
+
+[node name="Area2D5" type="Area2D" parent="."]
+position = Vector2( -431, 342 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D5"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 829, 273 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D5/Sprite"]
+position = Vector2( 0, 2 )
+occluder = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D5"]
+polygon = PoolVector2Array( 788, 280, 801, 266, 827, 246, 865, 242, 877, 254, 868, 263, 851, 284, 815, 300, 788, 304 )
+
+[node name="Area2D6" type="Area2D" parent="."]
+position = Vector2( -68, 276 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D6"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 829, 273 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D6/Sprite"]
+position = Vector2( 0, 2 )
+occluder = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D6"]
+polygon = PoolVector2Array( 788, 280, 801, 266, 827, 246, 865, 242, 877, 254, 868, 263, 851, 284, 815, 300, 788, 304 )
+
+[node name="Area2D7" type="Area2D" parent="."]
+position = Vector2( -329, -47 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D7"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 829, 273 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D7/Sprite"]
+position = Vector2( 0, 2 )
+occluder = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D7"]
+polygon = PoolVector2Array( 788, 280, 801, 266, 827, 246, 865, 242, 877, 254, 868, 263, 851, 284, 815, 300, 788, 304 )
+
+[node name="Area2D8" type="Area2D" parent="."]
+position = Vector2( -546, 549 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D8"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 829, 273 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D8/Sprite"]
+position = Vector2( 0, 2 )
+occluder = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D8"]
+polygon = PoolVector2Array( 788, 280, 801, 266, 827, 246, 865, 242, 877, 254, 868, 263, 851, 284, 815, 300, 788, 304 )
+
+[node name="Area2D9" type="Area2D" parent="."]
+position = Vector2( 166, 169 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D9"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 829, 273 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D9/Sprite"]
+position = Vector2( 0, 2 )
+occluder = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D9"]
+polygon = PoolVector2Array( 788, 280, 801, 266, 827, 246, 865, 242, 877, 254, 868, 263, 851, 284, 815, 300, 788, 304 )
+
+[node name="Area2D10" type="Area2D" parent="."]
+position = Vector2( 363, 503 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D10"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 829, 273 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D10/Sprite"]
+position = Vector2( 0, 2 )
+occluder = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D10"]
+polygon = PoolVector2Array( 788, 280, 801, 266, 827, 246, 865, 242, 877, 254, 868, 263, 851, 284, 815, 300, 788, 304 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1022.0
+margin_top = 9.0
+margin_right = 1421.0
+margin_bottom = 87.0
+custom_fonts/font = ExtResource( 1 )
+text = "5 Cobalt Left"
+
+[connection signal="timeout" from="Time/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_Area2D_mouse_exited"]
+[connection signal="tree_exiting" from="Area2D" to="." method="_on_Area2D_tree_exiting"]
+[connection signal="mouse_entered" from="Area2D2" to="Area2D2" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D2" to="Area2D2" method="_on_Area2D_mouse_exited"]
+[connection signal="tree_exiting" from="Area2D2" to="." method="_on_Area2D_tree_exiting"]
+[connection signal="mouse_entered" from="Area2D3" to="Area2D3" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D3" to="Area2D3" method="_on_Area2D_mouse_exited"]
+[connection signal="tree_exiting" from="Area2D3" to="." method="_on_Area2D_tree_exiting"]
+[connection signal="mouse_entered" from="Area2D4" to="Area2D4" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D4" to="Area2D4" method="_on_Area2D_mouse_exited"]
+[connection signal="tree_exiting" from="Area2D4" to="." method="_on_Area2D_tree_exiting"]
+[connection signal="mouse_entered" from="Area2D5" to="Area2D5" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D5" to="Area2D5" method="_on_Area2D_mouse_exited"]
+[connection signal="tree_exiting" from="Area2D5" to="." method="_on_Area2D_tree_exiting"]
+[connection signal="mouse_entered" from="Area2D6" to="Area2D6" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D6" to="Area2D6" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Area2D7" to="Area2D7" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D7" to="Area2D7" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Area2D8" to="Area2D8" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D8" to="Area2D8" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Area2D9" to="Area2D9" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D9" to="Area2D9" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Area2D10" to="Area2D10" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D10" to="Area2D10" method="_on_Area2D_mouse_exited"]

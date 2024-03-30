@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Cobalt Story.gd" type="Script" id=2]
+[ext_resource path="res://Lato-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "text"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="Cobalt Story" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_top = 79.0
+margin_right = 1436.0
+margin_bottom = 1011.0
+rect_min_size = Vector2( 1440, 932 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "
+You are a small child in the DRC who has been sent to mine cobalt. Click on the cobalt to mine it. You also only have a few seconds to find all 5 pieces of cobalt before you run out of oxygen."
+visible_characters = 0
+percent_visible = 0.0
+text = "
+You are a small child in the DRC who has been sent to mine cobalt. Click on the cobalt to mine it. You also only have a few seconds to find all 5 pieces of cobalt before you run out of oxygen."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "text"
+anims/RESET = SubResource( 1 )
+anims/text = SubResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 597.0
+margin_top = 724.0
+margin_right = 871.0
+margin_bottom = 808.0
+custom_fonts/font = ExtResource( 1 )
+text = "Continue"
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1453.0
+margin_bottom = 97.0
+custom_fonts/font = ExtResource( 1 )
+text = "The Game"
+align = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
